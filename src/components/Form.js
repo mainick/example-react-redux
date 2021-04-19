@@ -8,7 +8,7 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-const ConnectedForm = (props) => {
+const Form = (props) => {
     const [value, setValue] = useState("");
 
     const onChangeText = (e) => {
@@ -30,6 +30,4 @@ const ConnectedForm = (props) => {
     )
 }
 
-const Form = connect(null, mapDispatchToProps)(ConnectedForm);
-
-export default Form;
+export default connect(null, mapDispatchToProps)(Form);

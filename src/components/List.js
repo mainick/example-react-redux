@@ -4,7 +4,7 @@ const mapStateToProps = state => {
     return {todos: state.todos}
 }
 
-const ConnectedList = ({todos}) => (
+const List = ({todos}) => (
     <ul id="list-todos">
         {todos.map((title,i) => (
             <li key={i}><strong>{title}</strong></li>
@@ -12,6 +12,4 @@ const ConnectedList = ({todos}) => (
     </ul>
 )
 
-const List = connect(mapStateToProps)(ConnectedList);
-
-export default List;
+export default connect(mapStateToProps)(List);
