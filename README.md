@@ -1,8 +1,7 @@
-# react-redux
-Redux in React
-# Esempio React collegato allo store di Redux
+# async-action-redux-saga
+Azioni asincrone in Redux con Redux Saga
+# Esempio di chiamata a metodo API utilizzando Redux Saga
 
-Redux ci consente di separare lo stato dell'applicazione da React, 
-creando un archivio globale, **lo store di Redux**, che si trova ad un livello superiore dell'applicazione 
-ed alimenta lo stato di tutti gli altri componenti. 
-I componenti si aggiornano ogni volta che questo viene aggiornato con un minimo impatto sulle prestazioni.
+**redux-saga è un middleware Redux per la gestione degli effetti collaterali**. 
+Con redux-saga puoi avere una chiara separazione tra logica sincrona e asincrona, 
+tipo chiamate API, accesso allo storage o altro.

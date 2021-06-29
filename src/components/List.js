@@ -1,15 +1,23 @@
 import {connect} from "react-redux";
+import { getTodo } from "../store/actions";
+import {useEffect} from "react";
 
 const mapStateToProps = state => {
-    return {todos: state.todos}
+    return {todos: state.remoteTodos.slice(0, 10)}
 }
 
-const List = ({todos}) => (
-    <ul id="list-todos">
-        {todos.map((title,i) => (
-            <li key={i}><strong>{title}</strong></li>
-        ))}
-    </ul>
-)
+const List = (props) => {
+    useEffect(() => {
+        props.getTodo("https://jsonplaceholder.typicode.com/todos");
+    }, [])
 
-export default connect(mapStateToProps)(List);
+    return (
+      <ul id="list-todos">
+          {props.todos.map((todo,i) => (
+            <li key={i}><strong>{todo.title}</strong></li>
+          ))}
+      </ul>
+    )
+}
+
+export default connect(mapStateToProps, {getTodo})(List);
