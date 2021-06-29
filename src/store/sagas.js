@@ -17,5 +17,8 @@ function* workerSaga(action) {
 
 function getTodo(url) {
   return fetch(url)
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) throw Error(response.statusText);
+      return response.json()
+    })
 }
