@@ -1,7 +1,8 @@
-import { ADD_TODO } from "./actions"
+import { ADD_TODO, TODO_LOADED } from "./actions"
 
 const initialState = {
-    todos: []
+    todos: [],
+    remoteTodos: []
 }
 
 export function rootReducer(state = initialState, action) {
@@ -10,6 +11,10 @@ export function rootReducer(state = initialState, action) {
             //return {...state, todos: state.todos.concat(action.payload)};
             return Object.assign({}, state, {
                 todos: state.todos.concat(action.payload.title)
+            });
+        case TODO_LOADED:
+            return Object.assign({}, state, {
+                remoteTodos: state.remoteTodos.concat(action.payload)
             });
         default:
             return state;

@@ -1,8 +1,8 @@
-# react-redux
-Redux in React
-# Esempio React collegato allo store di Redux
+# async-action-redux-thunk
+Azioni asincrone in Redux con Redux Thunk
+# Esempio di chiamata a metodo API utilizzando Redux Thunk
 
-Redux ci consente di separare lo stato dell'applicazione da React, 
-creando un archivio globale, **lo store di Redux**, che si trova ad un livello superiore dell'applicazione 
-ed alimenta lo stato di tutti gli altri componenti. 
-I componenti si aggiornano ogni volta che questo viene aggiornato con un minimo impatto sulle prestazioni.
+**redux-thunk è un middleware per Redux**. 
+Con redux-thunk puoi restituire funzioni da action creators, 
+e puoi eseguire logica asincrona all'interno delle tue actions e 
+inviare altre actions in risposta alle chiamate AJAX.
